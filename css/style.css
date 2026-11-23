@@ -1,0 +1,319 @@
+/* --- Базовые настройки --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa; /* Очень светлый фон */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Прижимаем футер вниз */
+}
+
+/* --- Шапка (Hero) --- */
+.hero {
+    background: linear-gradient(135deg, #6bdb6b, #ee9086); /* Градиент */
+    color: #fff;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(107, 219, 107, 0.2);
+    text-align: center; /* Центрируем текст в шапке */
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero .subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 10px;
+}
+
+/* --- Блок с аватаркой (только для страницы "О себе") --- */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%; /* Круглая аватарка */
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background-color: #eee;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.hero-text .subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 5px;
+}
+
+.hero-text .specialty {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* --- Навигационное меню --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+nav a:hover, nav a.active {
+    border-bottom: 2px solid #fff;
+}
+
+/* --- Основной контент --- */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    flex: 1; /* Занимает всё свободное место, прижимая футер */
+    width: 100%;
+}
+
+/* --- Стили для центрирования текста на главной странице --- */
+.home-main {
+    display: flex;
+    align-items: center;     /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    text-align: center;      /* Выравнивание текста по центру */
+}
+
+.welcome-text {
+    max-width: 600px; /* Ограничиваем ширину текста */
+    padding: 20px;
+}
+
+.welcome-text h2 {
+    color: #444;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* --- Карточки контента --- */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-top: 4px solid #6bdb6b; /* Зеленая полоска сверху */
+}
+
+.card h2 {
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.card h2::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 24px;
+    background-color: #ee9086; /* Персиковый маркер */
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+/* --- Список навыков --- */
+.skill-list {
+    list-style-type: none;
+}
+
+.skill-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.skill-list li:last-child {
+    border-bottom: none;
+}
+
+.skill-list strong {
+    color: #555;
+}
+
+/* --- Увлечения (Сетка) --- */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.hobby-item {
+    background: #fdfbfb; /* Легкий персиковый оттенок */
+    border: 1px solid #fce4e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hobby-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(238, 144, 134, 0.2);
+    border-color: #ee9086;
+}
+
+.hobby-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hobby-item h3 {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* --- Стили для скачиваемых файлов --- */
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.file-link {
+    display: block;
+    padding: 12px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #5b9bd5; /* Синяя полоска слева */
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.file-link:hover {
+    background-color: #fff;
+    transform: translateX(5px); /* Сдвиг вправо при наведении */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: #5b9bd5;
+}
+
+/* --- Кнопки контактов --- */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 10px 25px; 
+    background-color: #5b9bd5; /* Спокойный синий */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+    font-size: 1rem;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(91, 155, 213, 0.3);
+}
+
+.contact-links a:hover {
+    background-color: #4a86c3; /* Темнее при наведении */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(91, 155, 213, 0.4);
+}
+
+/* --- Подвал --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+.copyright {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* --- Адаптивность для телефонов --- */
+@media (max-width: 600px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-text h1, .hero h1 {
+        font-size: 1.6rem;
+    }
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+    .contact-links {
+        flex-direction: column;
+    }
+    .contact-links a {
+        width: 100%;
+    }
+}
